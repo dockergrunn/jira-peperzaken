@@ -14,7 +14,13 @@ We begin by starting our data-container:
 
 Next we start up our MySQL container
 ```bash
-  docker run -dit -e MYSQL_ROOT_PASSWORD="secretpass" -e MYSQL_USER="jira_db_user" -e MYSQL_PASSWORD="moresecretpass" -e MYSQL_DATABASE="jira_db"  --name mysql mysql 
+  docker run -dit \
+  -e MYSQL_ROOT_PASSWORD="secretpass" \
+  -e MYSQL_USER="jira_db_user" \
+  -e MYSQL_PASSWORD="moresecretpass" \
+  -e MYSQL_DATABASE="jira_db" \
+  --name mysql \ 
+  mysql 
 ```
 
 Finally we start our Jira.
