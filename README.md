@@ -1,6 +1,9 @@
 # jira-peperzaken
 Our JIRA setup
 
+@TODO: 
+* Our setup, with nginx proxy and ssl.
+
 This setup consists of multiple containers.
 
   1. Jira (Java process)
@@ -20,7 +23,7 @@ Next we start up our MySQL container
   -e MYSQL_PASSWORD="moresecretpass" \
   -e MYSQL_DATABASE="jira_db" \
   --name mysql \ 
-  mysql 
+  mysql:5 
 ```
 
 Finally we start our Jira.
