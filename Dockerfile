@@ -16,7 +16,7 @@ RUN curl -Lks http://www.atlassian.com/software/jira/downloads/binary/atlassian-
   && mv /opt/jira/conf/server.xml /opt/jira/conf/server-backup.xml 
 
 ENV CONTEXT_PATH ROOT
-ADD launch.bash /launch
+COPY launch.bash /launch
 RUN chmod u+x /launch
 
 # Get the java controller.
