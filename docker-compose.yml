@@ -1,0 +1,26 @@
+mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: "secretpass"
+        MYSQL_DATABASE: "jiradb"
+        MYSQL_USER: "jiradbuser"
+        MYSQL_PASSWORD: "manysecretpass"
+    volumes:
+        - /where/you/want/your/mysql/data:/var/lib/mysql
+jira:
+    build: .
+    environment:
+        VIRTUAL_HOST: "jira.mycompany.com"
+    links: 
+        - mysql
+    volumes:
+        - /where/you/want/your/jira/data:/opt/atlassian-home
+nginx:
+    image: jwilder/nginx-proxy
+    volumes:
+        - /where/you/want/your/nginx/configs/:/etc/nginx/conf.d
+        - /your/tls/certs:/etc/nginx/certs
+        - /var/run/docker.sock:/tmp/docker.sock
+    ports:
+        - "80:80"
+        - "443:443"

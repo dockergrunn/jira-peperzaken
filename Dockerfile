@@ -6,10 +6,10 @@ FROM durdn/atlassian-base
 MAINTAINER Jasper Swaagman <j.swaagman@peperzaken.nl>
 
 # Install Jira
-ENV JIRA_VERSION 6.3.7
+ENV JIRA_VERSION 6.4.3
 RUN curl -Lks http://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-${JIRA_VERSION}.tar.gz -o /root/jira.tar.gz \
   && /usr/sbin/useradd --create-home --home-dir /opt/jira --groups atlassian --shell /bin/bash jira \
-  && tar zxf /root/jira.tar.gz --strip=1 -C /opt/jira
+  && tar zxf /root/jira.tar.gz --strip=1 -C /opt/jira \
   && chown -R jira:jira /opt/atlassian-home \
   && echo "jira.home = /opt/atlassian-home" > /opt/jira/atlassian-jira/WEB-INF/classes/jira-application.properties \
   && chown -R jira:jira /opt/jira \
