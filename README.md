@@ -26,7 +26,7 @@ The setup consists of 3 containers:
 The containers can be started by using the `docker-compose.yml` file.
 To get docker-compose:
 ```bash
-sudo wget https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname  -s`-`uname -m` -O /usr/local/bin/docker-compose
+sudo wget https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname  -s`-`uname -m` -O /usr/local/bin/docker-compose
 ```
 
 To run everything:
